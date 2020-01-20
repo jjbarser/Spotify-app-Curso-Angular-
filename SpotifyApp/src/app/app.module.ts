@@ -13,6 +13,7 @@ import { ArtistaComponent } from './feature/artista/artista.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BusquedaPipe } from './core/pipes/busqueda.pipe';
 import { TarjetaComponent } from './shared/tarjeta/tarjeta.component';
+import { ImagenesBlankPipe } from './core/pipes/imagenes-blank.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TarjetaComponent } from './shared/tarjeta/tarjeta.component';
     ArtistaComponent,
     NavbarComponent,
     BusquedaPipe,
-    TarjetaComponent
+    TarjetaComponent,
+    ImagenesBlankPipe
   ],
   imports: [
     BrowserModule,

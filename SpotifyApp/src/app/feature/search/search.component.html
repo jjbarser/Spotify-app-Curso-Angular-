@@ -1,9 +1,11 @@
 <div class="container animated fade fadeIn">
     <div class="col">
         <div class="row">
+            <!--recordar que si se va a obtener el valor del input se debe agregar el #(nombre de la varible) tal cual como está el #termino-->
             <input #termino type="text" (keyup)="buscarArtista(termino.value)"  class="form-control" placeholder="Buscar..." >
-            <app-tarjeta class="mt-5"></app-tarjeta>
+            <app-tarjeta class="mt-5" [items]="listado"></app-tarjeta>
         </div>
     </div>
 </div>
+
 

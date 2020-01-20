@@ -29,6 +29,9 @@ export class SearchComponent implements OnInit {
         this.listado=datos.artists.items;
       });
     }
-
+    //para que no salga nada en el listado y lo limpie
+    else{
+      this.listado=null;
+    }
   }
 }
