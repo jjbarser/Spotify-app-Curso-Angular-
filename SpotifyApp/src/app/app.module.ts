@@ -14,6 +14,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BusquedaPipe } from './core/pipes/busqueda.pipe';
 import { TarjetaComponent } from './shared/tarjeta/tarjeta.component';
 import { ImagenesBlankPipe } from './core/pipes/imagenes-blank.pipe';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ImagenesBlankPipe } from './core/pipes/imagenes-blank.pipe';
     NavbarComponent,
     BusquedaPipe,
     TarjetaComponent,
-    ImagenesBlankPipe
+    ImagenesBlankPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

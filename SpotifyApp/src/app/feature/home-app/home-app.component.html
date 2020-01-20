@@ -2,19 +2,23 @@
     <div class="row">
         <div class="col">
             <div class="form-group mb-5 animated fade fadeIn fast">
-                <input class="rounded w-100" type="text" name="parametroBusqueda" id="" placeholder="Search..." [(ngModel)]="parametroBusqueda">
+                <input class="rounded w-100" type="text" name="parametroBusqueda" id="" placeholder="Buscar..."
+                    [(ngModel)]="parametroBusqueda">
             </div>
         </div>
     </div>
+    <!--Agregando componente loading a la página-->
+    <app-loading class="text-center" *ngIf="cargando"></app-loading>
     <div class="row">
         <div class="col">
             <div class="card-columns">
-                <div class="card animated fade fadeIn" *ngFor="let listado of nuevasCanciones | busqueda:parametroBusqueda">
+                <div class="card animated fade fadeIn"
+                    *ngFor="let listado of nuevasCanciones | busqueda:parametroBusqueda">
                     <img src="{{ listado.images[0].url }}" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">{{listado.name}}</h5>
                         <span *ngFor="let artista of listado.artists" class="text-dark">{{artista.name}}</span>
-                        <a [href]=listado.href></a>
+                        <a class="stretched-link" [routerLink]="[ '/artista-form', listado.artists[0].id ]"></a>
                     </div>
                 </div>
             </div>

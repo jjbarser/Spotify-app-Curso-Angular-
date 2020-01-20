@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SpotifyService {
-  token = 'Bearer BQD9guWWz0WdOAipBSftgL3dV7FK9t14hlRpFkR82yjq46_SN0F2aydt7giRRWpXnJhqDrfaZxUXd5sxS58';
+  token = 'Bearer BQC7PFulg4ViBO0Y2PttHEzEF4nyDeKgUqO8mpoLNg7SJ1CnZzi6SnTw2-WldSThV0f5EVtKo2F0Zf1a3YE';
   constructor(private http:HttpClient) {
     console.log("Spotify service listo");
   }
@@ -20,7 +20,7 @@ export class SpotifyService {
     * y en el componente si validar lo que se necesite
     * @param url 
     */
-  getNewRelease( url:string){
+  getCanciones( url:string){
     //Creando el header que necesita la petición de spotify
     const headers=new HttpHeaders({
       'Authorization': `${this.token}`
@@ -30,12 +30,13 @@ export class SpotifyService {
     //y mediante el map lo que hago es recibir toda la data pero ya filtrada para que en el component no
     // tenga que navergar hasta los items y evitar hacer algo así data.album.items
     return this.http.get(url, {headers}).pipe(map(datos=>{
+      
       return datos['albums'].items;
     }));
 
    }
 
-   getartistas( url:string){
+   getArtistas( url:string){
     //Creando el header que necesita la petición de spotify
     const headers=new HttpHeaders({
       'Authorization':`${this.token}`
