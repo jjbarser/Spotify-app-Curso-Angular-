@@ -7,6 +7,11 @@
             </div>
         </div>
     </div>
+    <!--Agregando un error cuando suceda algun inconveniente-->
+    <div *ngIf="error" class="alert alert-danger">
+        <h3>Error</h3>
+        <p>Problema en la conexión al servicio</p>
+    </div>
     <!--Agregando componente loading a la página-->
     <app-loading class="text-center" *ngIf="cargando"></app-loading>
     <div class="row">

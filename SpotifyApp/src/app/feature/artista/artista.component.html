@@ -1,8 +1,42 @@
-<div class="container">
-    <div class="row">
-        <div class="col text-right">
+<app-loading *ngIf="cargando"></app-loading>
+
+<div class="container" *ngIf="!cargando">
+    <div class="row justify-content-center">
+        <div class="col">
             <img class="img-thumbnail img-circle" [src]="listadoEspecifico.images[0].url" alt="">
-        <span>{{listadoEspecifico.name}}</span>
+        </div>
+        <div class="col">
+            <span class="mr-3">{{listadoEspecifico.name}}</span>
+            <p class="d-inline-block">
+                <a target="_blank" href={{listadoEspecifico.external_urls.spotify}}>Ir a la página del artista</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <table class="table table-border table-dark">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Foto</th>
+                        <th scope="col">Album</th>
+                        <th scope="col">Canción</th>
+                        <th scope="col">Vista Previa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center" *ngFor="let item of listadoTracks">
+                        <td><img class="rounded border-danger w-auto" src="{{item.album.images[2].url}}" alt=""></td>
+                        <td>{{item.album.name}}</td>
+                        <td>{{item.name}}</td>
+                        <td>
+                            <iframe [src]="item.uri | domSeguro:'https://open.spotify.com/embed?uri='" width="300"
+                                height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <!--<audio [src]="item.preview_url" controls></audio>-->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

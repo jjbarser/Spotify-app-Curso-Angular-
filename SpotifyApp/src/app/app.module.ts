@@ -15,6 +15,7 @@ import { BusquedaPipe } from './core/pipes/busqueda.pipe';
 import { TarjetaComponent } from './shared/tarjeta/tarjeta.component';
 import { ImagenesBlankPipe } from './core/pipes/imagenes-blank.pipe';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { DomSeguroPipe } from './core/pipes/dom-seguro.pipe';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoadingComponent } from './shared/loading/loading.component';
     BusquedaPipe,
     TarjetaComponent,
     ImagenesBlankPipe,
-    LoadingComponent
+    LoadingComponent,
+    DomSeguroPipe
   ],
   imports: [
     BrowserModule,

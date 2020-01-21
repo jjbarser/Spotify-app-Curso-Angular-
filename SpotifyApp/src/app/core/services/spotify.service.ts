@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SpotifyService {
-  token = 'Bearer BQC7PFulg4ViBO0Y2PttHEzEF4nyDeKgUqO8mpoLNg7SJ1CnZzi6SnTw2-WldSThV0f5EVtKo2F0Zf1a3YE';
+  token = 'Bearer BQCEqX83n9jZ0qoH96HaC4A3rBdErPZZBU2SAa8kDNB3Bc1xg3IhkCp5AJw_3SX_iKrSaHbMvoDF0E_xIZo';
   constructor(private http:HttpClient) {
     console.log("Spotify service listo");
   }
@@ -35,7 +35,12 @@ export class SpotifyService {
     }));
 
    }
-
+    
+   /**
+    * Este servicio lo volví genérico para obtener la información que necesito
+    * y no tener que crear un servicio por cada petición get
+    * @param url 
+    */
    getArtistas( url:string){
     //Creando el header que necesita la petición de spotify
     const headers=new HttpHeaders({
@@ -45,6 +50,5 @@ export class SpotifyService {
     //En este caso se hace el envío de todo la dato para ser procesada en el componente
     //con el fin de que el servicio sea más genérico
     return this.http.get(url, {headers})
-
    }
 }
