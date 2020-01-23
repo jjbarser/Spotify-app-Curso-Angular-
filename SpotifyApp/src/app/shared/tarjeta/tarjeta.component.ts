@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tarjeta.component.css']
 })
 export class TarjetaComponent implements OnInit {
-  // Le decimo que desde el padre que es el search component le va a llegar
+  // Le decimos que desde el padre que es el search component le va a llegar
   //una variable llamada items
   @Input() items:any[]=[];
   constructor() { }

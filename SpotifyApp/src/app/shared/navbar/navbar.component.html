@@ -1,5 +1,6 @@
 
     <!-- Navbar content -->
+    
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/assets/img/banner-ico.png" width="30" height="30" alt="">
@@ -18,7 +19,15 @@
             <li class="nav-item" routerLinkActive="activate">
               <a class="nav-link" routerLink="/search-form">Artista</a>
             </li>
+            <li class="nav-item" routerLinkActive="activate">
+              <a class="nav-link" routerLink="/perfil" *ngIf="auth.loggedIn">Perfil</a>
+            </li>
           </ul>
+        </div>
+        <div>
+            <button class="btn btn-sm btn-outline-primary" (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+            <button  class="btn btn-sm btn-outline-danger" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+            
         </div>
       </nav>
 

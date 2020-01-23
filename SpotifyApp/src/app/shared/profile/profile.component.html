@@ -1,0 +1,18 @@
+
+    <div class="container mt-5 ">
+
+        <div class="card-columns d-flex justify-content-center">
+            <div class="card text-left">
+              <img class="card-img-top" [src]="auth.userProfile$.source._value.picture" alt="">
+              <div class="card-body">
+              <h4 class="card-title">{{auth.userProfile$.source._value.given_name}} {{auth.userProfile$.source._value.family_name}}</h4>
+                <p class="card-text">{{auth.userProfile$.source._value.email}}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <pre *ngIf="auth.userProfile$ | async as profile">
+        <code>{{ profile | json }}</code>
+        </pre>
+    

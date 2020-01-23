@@ -16,6 +16,7 @@ import { TarjetaComponent } from './shared/tarjeta/tarjeta.component';
 import { ImagenesBlankPipe } from './core/pipes/imagenes-blank.pipe';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { DomSeguroPipe } from './core/pipes/dom-seguro.pipe';
+import { ProfileComponent } from './shared/profile/profile.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DomSeguroPipe } from './core/pipes/dom-seguro.pipe';
     TarjetaComponent,
     ImagenesBlankPipe,
     LoadingComponent,
-    DomSeguroPipe
+    DomSeguroPipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
