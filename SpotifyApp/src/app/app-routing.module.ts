@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'home-form', component: HomeAppComponent },
   { path: 'search-form', component: SearchComponent },
   { path: 'tarjeta-form', component: TarjetaComponent },
-  { path: 'artista-form/:id', component: ArtistaComponent },
+  { path: 'artista-form/:id', component: ArtistaComponent }, 
   //// para trabajar con autenticación por Auth0, [AuthGuard] sirve para que cuando intenten entrar directente 
   //a las páginas privadas por medio del enlace les pida el login y no entren directamente
   {path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
